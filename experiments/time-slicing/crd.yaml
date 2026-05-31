@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: device-plugin-sharing-config
+  namespace: gpu-operator
+data:
+  t4-timeslicing-4: |-
+    version: v1
+    sharing:
+      timeSlicing:
+        renameByDefault: true
+        failRequestsGreaterThanOne: false
+        resources:
+          - name: nvidia.com/gpu
+            replicas: 4
+
+  mps: |-
+    version: v1
+    sharing:
+      mps:
+        renameByDefault: true
+        resources:
+          - name: nvidia.com/gpu
+            replicas: 4
