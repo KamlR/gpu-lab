@@ -29,8 +29,8 @@
 
 ## Эксперимент 1: Exclusive GPU
 **Цель:** оценить производительность при выделении всей GPU одному workload.
-Для эксперимента я использовала файл experiments/torch-benchmark-exclusive.yaml
-Ниже представлены полученные результаты.
+Для эксперимента я использовала файл experiments/exclusive/torch-benchmark-exclusive.yaml
+Ниже описаны полученные результаты.
 
 **Конфигурация**
 
@@ -70,7 +70,9 @@ Peak GPU Temperature	58 °C
 
 
 ## Эксперимент 2: Time-slicing
-**Цель:** проверить работу GPU sharing, когда 4 pod одновременно используют одну физическую GPU.
+**Цель:** проверить работу GPU sharing, когда 4 pod одновременно используют одну физическую GPU. 
+Для эксперимента я использовала файл /experiments/time-slicing/torch-benchmark-shared.yaml.
+Ниже описаны полученные результаты.
 
 **Конфигурация:**
 
@@ -84,7 +86,7 @@ GPU Memory: 14.56 GB
 ```
 
 **Результаты benchmark:**
-
+ts-i это 4 отдельно запущенных задачи, которые делили gpu между собой.
 ```
 Job	avg_step_sec	min_step_sec	max_step_sec	peak_cuda_mem_gb
 ts-1	4.990	      3.355	          5.488	        1.91
