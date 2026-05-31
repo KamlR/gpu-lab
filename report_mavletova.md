@@ -54,10 +54,10 @@ peak_cuda_mem_gb=1.91
 **Метрики Grafana:**
 ```
 Peak GPU Utilization	100 %
-Peak Memory Copy Utilization	~55 %
-Peak FB Used	~0.0024 GB
-Peak Power Usage	~69.5 W
-Peak GPU Temperature	~58 °C
+Peak Memory Copy Utilization	55 %
+Peak FB Used	0.0024 GB
+Peak Power Usage	69.5 W
+Peak GPU Temperature	58 °C
 ```
 **Скрины Grafana**
 
