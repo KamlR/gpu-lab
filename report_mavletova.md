@@ -19,13 +19,13 @@
 
 ### Nodes and Pods
 **kubectl get nodes -o wide**
-![alt text](<Снимок экрана 2026-05-31 в 03.36.14.png>)
+![alt text](</get-node-o-wide.png>)
 
 **kubectl get pods -A**
-![alt text](<Снимок экрана 2026-05-31 в 03.37.55.png>)
+![alt text](</get-pods-A.png>)
 
 **вывод nvidia-smi из pod**
-![alt text](<Снимок экрана 2026-05-31 в 03.40.58.png>)
+![alt text](</pod-nvidia-smi.png>)
 
 ## Эксперимент 1: Exclusive GPU
 **Цель:** оценить производительность при выделении всей GPU одному workload.
@@ -49,7 +49,7 @@ min_step_sec=1.0109100341796875
 max_step_sec=1.2362370491027832
 peak_cuda_mem_gb=1.91
 ```
-![alt text](<Снимок экрана 2026-05-30 в 21.12.48.png>)
+![alt text](</experiments/exclusive/logs.png>)
 
 **Метрики Grafana:**
 ```
@@ -63,7 +63,7 @@ Peak GPU Temperature	~58 °C
 
 Зелёная линия это под с экспериментом.
 
-![alt text](</experiments/exclusive/Снимок экрана 2026-05-30 в 21.08.32.png>) ![alt text](</experiments/exclusive/Снимок экрана 2026-05-30 в 21.07.40.png>) ![alt text](</experiments/exclusive/Снимок экрана 2026-05-30 в 21.08.04.png>) ![alt text](</experiments/exclusive/Снимок экрана 2026-05-30 в 21.08.12.png>) ![alt text](</experiments/exclusive/Снимок экрана 2026-05-30 в 21.08.23.png>)
+![alt text](</experiments/exclusive/gpu-mem-copy-util-grafana.png>) ![alt text](</experiments/exclusive/gpu-mem-used-grafana.png>) ![alt text](</experiments/exclusive/gpu-power-usage-grafana.png>) ![alt text](</experiments/exclusive/gpu-temperature-grafana.png>) ![alt text](</experiments/exclusive/gpu-util-grafana.png>)
 
 #### Вывод по 1 экперименту
 Режим Exclusive обеспечивает максимальную производительность и минимальную задержку выполнения вычислений, поскольку GPU полностью выделяется одному приложению без конкуренции со стороны других workload. Такой режим оптимален для длительных и ресурсоёмких задач машинного обучения и глубокого обучения, где требуется максимальная производительность одной GPU.
@@ -105,7 +105,7 @@ Peak GPU Temperature	71 °C
 
 **Скрины из Grafana:**
 
-![alt text](</experiments/time-slicing/Снимок экрана 2026-05-31 в 00.50.57.png>) ![alt text](</experiments/time-slicing/Снимок экрана 2026-05-31 в 00.50.19.png>) ![alt text](</experiments/time-slicing/Снимок экрана 2026-05-31 в 00.50.29.png>) ![alt text](</experiments/time-slicing/Снимок экрана 2026-05-31 в 00.50.37.png>) ![alt text](</experiments/time-slicing/Снимок экрана 2026-05-31 в 00.50.46.png>)
+![alt text](</experiments/time-slicing/gpu-mem-copy-util-grafana.png>) ![alt text](</experiments/time-slicing/gpu-mem-used-grafana.png>) ![alt text](</experiments/time-slicing/gpu-power-usage-grafana.png>) ![alt text](</experiments/time-slicing/gpu-temperature-grafana.png>) ![alt text](</experiments/time-slicing/gpu-util-grafana.png>)
 
 
 **Наблюдения:**
